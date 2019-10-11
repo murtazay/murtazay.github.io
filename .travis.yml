@@ -5,9 +5,10 @@ cache: npm
 script:
   - npm run build
 deploy:
-  provider: master
+  provider: pages
   local_dir: dist
+  target_branch: master
   skip_cleanup: true
   github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
 on:
-    branch: master
+    branch: dev
