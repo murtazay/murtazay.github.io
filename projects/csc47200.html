@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+
+    <title>Murtaza's Projects</title>
+
+    <!-- Bootstrap core CSS -->
+	<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">-->
+
+    <!-- Custom styles for this template -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/starter-template.css" rel="stylesheet">
+  </head>
+
+  <body>
+	<nav class="navbar navbar-fixed-top navbar-default">
+	  <div class="container-fluid">
+		<div class="navbar-header">
+		  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		  </button>
+		  <a class="navbar-brand" href="#">Murtaza's Projects</a>
+		</div>
+
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		  <ul class="nav navbar-nav">
+			<li><a href="/index.html">Home</a></li>
+			<li class="dropdown">
+			  <a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-expanded="false">Projects<span class="caret"></span></a>
+			  <ul class="dropdown-menu" role="menu">
+				<li><a href="/projects/csc47000.html">CSC 47000 - Image Processing</a></li>
+				<li><a href="/projects/csc47200.html">CSC 47200 - Computer Graphics</a></li>
+<!--				<li><a href="#">CSC 59866/7 - Senior Design - CuraWatch</a></li>-->
+			  </ul>
+			</li>
+		  </ul>
+<!--
+		  <ul class="nav navbar-nav navbar-right">
+			<li><a href="#">Link</a></li>
+		  </ul>
+-->
+		</div>
+	  </div>
+	</nav>
+
+    <div class="container">
+
+      <div class="starter-template">
+        <h1>CSC 47200 - Computer Graphics</h1>
+        <p class="lead">This was a very fun class. The projects were cool and could be expanded on.
+					<br>The projects were coded in C++ using the QT Framework and utilized OpenGL to display graphics.
+					<br>The OpenGL code was written two ways: using C++/GL codes and Shaders.
+					<br>They have been ported to WebGL.</p>
+	  	<script src="/js/gl-matrix.js"></script>
+	  	<script src="/js/utils.js"></script>
+	  	<hr/>
+        <div class="container-fluid">
+			<h1 class="text-center">P Render</h1>
+            <div class="row">
+                <div class="col-sm-6">
+                    <canvas id="projectP" width="500" height="500"></canvas>
+					<script src="/js/projectp.js"></script>
+                </div>
+                <div class="col-sm-6">
+                    <p class="text-center">This was the first assignment and was really supposed just give a glimpse of the various things you can do with OpenGL.<br>From the top left to the bottom right the following GL drawmodes are shown:<em><span class="text-success">POINTS, LINES, LINE_STRIP, LINE_LOOP, TRIANGLES, TRIANGLE_STRIP, TRIANGLE_FAN, QUADS, POLYGON.</span></em><br>This also illustrates the differences between WebGL and OpenGL. In WebGL you can only draw <em><span class="text-success">POINTS, LINES, LINE_STRIP, LINE_LOOP, TRIANGLES, TRIANGLE_STRIP, TRIANGLE_FAN.</span></em></p>
+                </div>
+            </div>
+			<hr/>
+			<h1 class="text-center">Triangles</h1>
+            <div class="row">
+                <div class="col-sm-6">
+                    <canvas id="projectT" width="500" height="500"></canvas>
+                </div>
+                <div class="col-sm-6 align-self-center bs-component">
+                    <form class="form-horizontal well">
+                        <fieldset>
+                            <legend>Controls</legend>
+                            <div class="form-group row">
+                                <label class="col-sm-2 control-label">Display</label>
+                                <div class="col-sm-10 btn-group">
+                                    <a id="btn-displaytype" class="btn btn-primary">Solid</a>
+                                    <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" id="btn-solid">Solid</a></li>
+                                        <li><a class="dropdown-item" id="btn-gradient">Gradient</a></li>
+                                        <li><a class="dropdown-item" id="btn-texture">Texture</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="number-theta" class="col-sm-2 control-label">Theta</label>
+								<div class="col-sm-5">
+                                	<input id="slider-theta" class="form-control col-sm-12" type="range" min="0" max="360" value="0" autocomplete="off">
+								</div>
+								<div class="col-sm-5">
+                                	<input id="number-theta" class="form-control col-sm-12" type="number" min="0" max="360" value="0" autocomplete="off">
+								</div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="number-subdivide" class="col-sm-2 control-label">Subdivide</label>
+								<div class="col-sm-5">
+                                	<input id="slider-subdivide" class="form-control col-sm-12" type="range" min="0" max="10" value="0" autocomplete="off">
+								</div>
+								<div class="col-sm-5">
+                                	<input id="number-subdivide" class="form-control col-sm-12" type="number" min="0" max="10" value="0" autocomplete="off">	
+								</div>
+                            </div>
+							<div class="form-group row">
+								<label for="number-size" class="col-sm-2 control-label">Size</label>
+								<div class="col-sm-5">
+									<input id="slider-size" class="form-control col-sm-12" type="range" min="1.0" max="4.0" step=".05" value="1.0" autocomplete="off">
+								</div>
+								<div class="col-sm-5">
+									<input id="number-size" class="form-control col-sm-12" type="number" min="1.0" max="4.0" step=".05" value="1.0" autocomplete="off">
+								</div>
+							</div>
+                            <div class="form-group row">
+                                <label for="checkbox-twist" class="col-sm-2 control-label">Twist?</label>
+								<div class="col-sm-4">	
+                                	<input id="checkbox-twist" class="form-control col-sm-4" type="checkbox" autocomplete="off">
+								</div>
+                                <label id="label-wire" for="checkbox-wire" class="col-sm-2 control-label" style="display: none;">Wire?</label>
+								<div class="col-sm-4">
+                                	<input id="checkbox-wire" class="form-control col-sm-4" type="checkbox" style="display: none;" autocomplete="off">
+								</div>
+                            </div>
+							<div class="form-group row">
+								<label class="col-sm-2 control-label">Number of Triangles</label>
+								<label id="label-triangles" class="col-sm-2 control-label">1</label>
+							</div>
+                        </fieldset>
+                    </form>
+                </div>
+				<script src="/js/projectt.js"></script>
+            </div>
+			<p class="text-center">This was a very cool assignment. It focused on all aspects of development including controls and their handling. Some differences between the desktop version and this one include a size control and number of sub-triangles info.<br><span class="text-success">P.S.: If your wondering why the size makes the triangle spin when twist is on, that is because twist is dependant on the distance of a point to the center of the triangle. Hence changing size affects distance and therefore the twist. Not 3D btw</span></p>
+<!--
+			<hr/>
+			// Todo assignment 3
+			<div class="row justify-content-md-center align-items-center">
+				<div class="col-sm-6">
+					<canvas id="projectW" width="500" height="500"></canvas>
+				</div>
+				<div class="col-sm-6 align-self-center bs-component">
+					<form class="form-horizontal well">
+						<fieldset>
+							<legend>Controls</legend>
+							<div class="form-group row">
+                                <label class="col-sm-2 control-label">Display</label>
+                                <div class="col-sm-6 btn-group" style="margin-left: 1.5rem;">
+                                    <a id="btn-display" class="btn btn-primary">Texture+Wireframe</a>
+                                    <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" id="btn-wireframe">Wireframe</a></li>
+                                        <li><a class="dropdown-item" id="btn-texturea">Texture</a></li>
+                                        <li><a class="dropdown-item" id="btn-texturew">Texture+Wireframe</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+							<div class="form-group row">
+                                <label class="col-sm-2 control-label">Geometry</label>
+                                <div class="col-sm-6 btn-group" style="margin-left: 1.5rem;">
+                                    <a id="btn-display" class="btn btn-primary">Middle Block</a>
+                                    <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" id="btn-flat">Flat</a></li>
+                                        <li><a class="dropdown-item" id="btn-spike">Spike</a></li>
+                                        <li><a class="dropdown-item" id="btn-diagonalwall">Diagonal Wall</a></li>
+                                        <li><a class="dropdown-item" id="btn-sidewall">Side Wall</a></li>
+                                        <li><a class="dropdown-item" id="btn-hole">Hole</a></li>
+                                        <li><a class="dropdown-item" id="btn-middleblock">Middle Block</a></li>
+                                        <li><a class="dropdown-item" id="btn-diagonalblock">Diagonal Block</a></li>
+                                        <li><a class="dropdown-item" id="btn-cornerblock">Corner Block</a></li>
+                                        <li><a class="dropdown-item" id="btn-hill">Hill</a></li>
+                                        <li><a class="dropdown-item" id="btn-hillfour">Hill Four</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+							<div class="form-group row">
+								<label for="number-sizea" class="col-sm-2 control-label">Size</label>
+								<input id="slider-sizea" class="form-control col-sm-5" type="range" min="2" max="64" step="1" value="2">
+								<input id="number-sizea" class="form-control col-sm-5" type="number" min="2" max="64" step="1" value="2">
+							</div>
+							<div class="form-group row">
+								<label for="number-speed" class="col-sm-2 control-label">Speed</label>
+								<input id="slider-speed" class="form-control col-sm-5" type="range" min="1" max="20" step="1" value="1">
+								<input id="number-speed" class="form-control col-sm-5" type="number" min="1" max="20" step="1" value="1">
+							</div>
+							<div class="form-group row">
+								<label for="btn-animate" class="col-sm-2 control-label">Animate</label>
+								<button id="btn-animate" type="button" class="btn btn-primary col-sm-2">Start</button>
+								<label for="btn-reset" class="col-sm-2 control-label">Reset</label>
+								<button id="btn-reset" type="button" class="btn btn-primary col-sm-2">Reset</button>
+							</div>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+-->
+        </div>
+      </div>
+
+    </div><!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <!-- <script src="../../../../assets/js/ie10-viewport-bug-workaround.js"></script> -->
+  </body>
+</html>
